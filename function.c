@@ -323,3 +323,7 @@ void deleteNewline(char prop[]){
       int a = strlen(prop);
       strcpy(&prop[strlen(prop)-1],"");
 }
+void deleteNewlineII(char prop[]){
+      int a = strlen(prop);
+      prop[strlen(prop)-1] = NULL;
+}
