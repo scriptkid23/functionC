@@ -88,7 +88,7 @@ void inputArr_levelTwo(int arr[100][100],int row, int col){
     fclose(matrix);
 }
 void outputArr_levelTwo(int arr[100][100],int row, int col){
-  
+
   for(int i = 0; i < row; i++){
     for (int j = 0; j < col; j++) {
       printf("%3d",arr[i][j]);
@@ -305,4 +305,21 @@ int  location(int a[100][100], int row,int col, int x,int y){
     }
     break;
   }
+}
+void deleteSpaceII(char prop[]){
+  char temp[3];
+  temp[1] = '\0';
+  for(int i = 0; i < strlen(prop)-1;i++)
+  {
+    for(int j = i+1;j< strlen(prop);j++)
+    if(prop[i] == ' ') {
+      temp[0] = prop[i];
+      prop[i] = prop[j];
+      prop[j] = temp[0];
+    }
+  }
+}
+void deleteNewline(char prop[]){
+      int a = strlen(prop);
+      strcpy(&prop[strlen(prop)-1],"");
 }
